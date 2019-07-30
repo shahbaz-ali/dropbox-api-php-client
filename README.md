@@ -4,7 +4,8 @@ A PHP client library for Oauth2 Authentication And accessing Dropbox APIs
 ## Basic Example
 > Authentication with OAuth
 
-```require 'dropbox-api-client.php';
+```
+require 'dropbox-api-client.php';
 
     $oauth_config = [
         'client_id' => <client id>,
