@@ -24,6 +24,8 @@ class Dropbox_Client
   private $config;
   
   private $logger;
+
+  private $creds;
   
   
   public function __construct(array $config = array())
@@ -65,7 +67,7 @@ class Dropbox_Client
     $auth = $this->getOAuth2Service();
     $auth->setCode($code);
     $auth->setRedirectUri($this->getRedirectUri());
-    $creds = $auth->fetchAuthToken();
+    $this->creds = $auth->fetchAuthToken();
     
   }
 
@@ -140,6 +142,9 @@ class Dropbox_Client
     return $this->config['response_type'];
   }
 
+  public function getCredentialsInfoAsAssoc(){
+    return $this->creds;
+  }
 
 
 }
