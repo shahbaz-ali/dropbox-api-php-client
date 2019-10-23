@@ -144,10 +144,22 @@ class Dropbox_Client
     return $this->config['response_type'];
   }
 
-  public function getCredentialsInfoAsAssoc(){
-    return $this->creds;
+  public function getAccessToken(){
+    return $this->creds['access_token'];
   }
 
+  public function getAccountId(){
+    return $this->creds['account_id'];
+  }
+
+  public function getTokenType(){
+    return $this->creds['token_type'];
+
+  }
+
+  public function getUserId(){
+    return $this->creds['uid'];
+  }
 
   /**
      * getUserAccountDetails() is a fucntion for route "/get_account"

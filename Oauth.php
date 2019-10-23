@@ -71,7 +71,7 @@ class OAuth2{
         try{
             $response = $client->post("/oauth2/token",['query'=>$query_params]);
             $r = json_decode($response->getBody(),true);
-            return print_r($r,true);
+            return $r;
         }catch(GuzzleException $e){
             echo $e;
         }
