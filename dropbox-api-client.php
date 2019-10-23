@@ -1,6 +1,8 @@
 <?php
 
 require 'Oauth.php';
+require 'Users.php';
+
 require 'vendor/autoload.php';
 
 
@@ -146,5 +148,18 @@ class Dropbox_Client
     return $this->creds;
   }
 
+
+  /**
+     * getUserAccountDetails() is a fucntion for route "/get_account"
+     * @return json string containing user account information
+     * for detailed description check Users.php module
+     *     */
+  public function getUserAccountDetails($access_token_value,$account_id){
+    $user = new Users(array(
+      'access_token'=>$access_token_value,
+      'account_id' =>$account_id
+    ));
+    echo $user->getUserAccountDetails();
+  }
 
 }
