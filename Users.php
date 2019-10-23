@@ -87,7 +87,7 @@ class Users{
                 'body'=>json_encode(['account_id'=>$this->config['account_id'],])
             ));
             $r = json_decode($response->getBody(),true);
-            return print_r($r,true);
+            return $r;
         }catch(GuzzleException $e){
             echo $e;
         }
