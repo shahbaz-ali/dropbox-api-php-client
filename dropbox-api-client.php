@@ -171,7 +171,7 @@ class Dropbox_Client
       'access_token'=>$access_token_value,
       'account_id' =>$account_id
     ));
-    echo $user->getUserAccountDetails();
+    return json_encode($user->getUserAccountDetails());
   }
 
 }
