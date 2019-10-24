@@ -37,7 +37,8 @@ class Dropbox_Client
           'client_id' => '',
           'redirect_uri' => null,
           'state' => null,
-          'response_type' => 'code'
+          'response_type' => 'code',
+          'force_reauthentication' => true
         ],
         $config
     );
