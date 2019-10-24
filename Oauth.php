@@ -63,7 +63,8 @@ class OAuth2{
             'grant_type' => $this->getGrantType(),
             'redirect_uri' => $this->getRedirectUri(),
             'client_id' => $this->getClientId(),
-            'client_secret' => $this->getClientSecret()
+            'client_secret' => $this->getClientSecret(),
+            'force_reauthentication' => true
         ];
 
         $client = new GuzzleHttp\Client(["base_uri" => "https://api.dropbox.com"]);
